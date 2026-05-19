@@ -170,12 +170,18 @@
       <!-- Sidebar -->
       <div class="sidebar">
         <!-- Sidebar user (optional) -->
+
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
           <div class="image">
-            <img src="../../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+            <img src="assets/admni/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
-            <a href="#" class="d-block">Alexander Pierce</a>
+            @if(Auth::check())
+              <a href="#" class="d-block">{{ Auth::user()->name }}</a>
+              <a href="{{ route('logout') }}" class="d-block text-muted" style="font-size: 12px;">Logout</a>
+            @else
+              <a href="{{ route('login.create') }}" class="d-block">Login</a>
+            @endif
           </div>
         </div>
 
@@ -351,6 +357,6 @@
   <script src="{{ asset('assets/admin/dist/js/demo.js') }}"></script>
 
   @stack('scripts')
-</body>
+</body>Sasal?
 
-</html>
+</html>da
